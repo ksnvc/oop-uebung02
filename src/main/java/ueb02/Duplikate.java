@@ -8,7 +8,18 @@ class Duplikate {
 	 * @return StringSet mit den Wörtern, welche mind. zwei mal vorkommen.
 	 */
 	static StringSet findeDuplikate(String text) {
-		// TODO Implementieren Sie die Methode gemäß dem obigen Javadoc Kommentar.
-		return null;
-	}
+
+		String[] a = text.replaceAll("!", "").split(" ");
+		StringSet b = new StringSetImpl();
+		StringSet dupl = new StringSetImpl();
+		for (int i = 0; i < a.length; i++) {
+			if (!b.contains(a[i]))
+				b.add(a[i]);
+             else {
+        	dupl.add(a[i]);
+		     }
+	    }
+	    return dupl;
+
+     }
 }
